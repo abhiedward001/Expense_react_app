@@ -3,10 +3,17 @@ import  FormComponent from './FormComponent';
 import './NewExpense.css';
 
 
-const NewExpense = () => {
+const NewExpense = (props) => {
+ const onformdatahandler=(data)=>{
+     const childformdata={
+         ...data,
+         id:Math.random().toString(),
+     };
+     props.expenseformdata(childformdata);
+ };
     return (
         <div className="new-expense">
-            <FormComponent/>
+            <FormComponent onformdata={onformdatahandler} />
         </div>
     )
 }
