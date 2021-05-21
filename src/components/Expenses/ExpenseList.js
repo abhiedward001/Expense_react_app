@@ -5,7 +5,8 @@ import './ExpenseList.css';
 const ExpenseList = (props) => {
     if(props.items.length===0)return (<h2 className="expenses-list__fallback">Oops, No data found !!</h2>);
     return (
-        <ul className="expenses-list">
+        <div className="container">
+              <ul className="expenses-list">
             { props.items.map((eachexpense) => {
                 return (
                     <ExpenseItem
@@ -17,6 +18,8 @@ const ExpenseList = (props) => {
             })
             }
         </ul>
+        </div>
+      
     );
 }
 

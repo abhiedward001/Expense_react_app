@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-
+import Header from './components/Header';
 import Expenses from './components/Expenses/Expenses';
 import NewExpense from './components/New Expense/NewExpense';
-
+import Footer from './components/Footer';
 const dummydata = [
   {
     id: 'e1',
@@ -37,8 +37,10 @@ const expensedatahandler=(data)=>{
 };
   return (
     <div>
+        <Header title="My All Expenses" search={false}></Header>
       <NewExpense expenseformdata={expensedatahandler}/>
       <Expenses items={expenses} />
+      <Footer/>
     </div>
   );
 }
